@@ -45,7 +45,12 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 
 
 Scenario: no ratings selected
-  # see assignment
+  Then I should see all of the movies
 
 Scenario: all ratings selected
-  # see assignment
+  When I check "ratings_PG"
+  And I check "ratings_R"
+  And I check "ratings_PG-13"
+  And I check "ratings_G"
+  And I press "ratings_submit"
+  Then I should see all of the movies
